@@ -1,0 +1,28 @@
+#import "../fragment/user/userFragment.graphql"
+mutation CreateOneUser($input: CreateUserInput!) {
+  createUser(createUserInput: $input) {
+    ...userFragment
+  }
+}
+
+# mutation UpdateOneUser($input: UpdateOneUserInput!) {
+#   updateOneUser(input: $input) {
+#     ...userFragment
+#   }
+# }
+
+# # mutation UpdateUserPassword($input: UserUpdatePasswordInput!, $id: Int!) {
+# #   updateUserPassword(input: $input, id: $id)
+# # }
+
+# mutation ChangePassword(
+#   $currentPassword: String!
+#   $newPassword: String!
+#   $newPasswordConfirmation: String!
+# ) {
+#   changePassword(
+#     currentPassword: $currentPassword
+#     newPassword: $newPassword
+#     newPasswordConfirmation: $newPasswordConfirmation
+#   )
+# }

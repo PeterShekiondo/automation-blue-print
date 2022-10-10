@@ -1,0 +1,22 @@
+fragment userFragment on User {
+  id
+  username
+  password
+  email
+  department
+  position
+  first_name
+  last_name
+  gender
+  joining_status
+  current_status
+  bachelors
+  bachelors_status
+  masters
+  masters_status
+  phd
+  phd_status
+  research_interests
+  joining_skills
+  current_skills
+}

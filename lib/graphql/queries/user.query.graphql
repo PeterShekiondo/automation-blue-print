@@ -1,0 +1,15 @@
+query Users {
+  users{
+      ...userFragment
+  }
+}
+
+
+
+query User(
+  $id: Int!
+) {
+  user(id: $id) {
+   ...userFragment
+  }
+}
