@@ -1,5 +1,5 @@
 import { GQLRequest, GQLResponse } from '../cor/abstract.interceptor'
-// import { GraphQLClient } from 'graphql-request'
+import { GraphQLClient } from 'graphql-request'
 import { RequestSnapshot } from './snapshot'
 import { RequestStrategy } from '../strategies/request.strategy';
 import { ResponseStrategy } from '../strategies/response.strategy';
