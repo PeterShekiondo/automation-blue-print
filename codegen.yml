@@ -1,0 +1,11 @@
+# schema: http://4.224.28.145/graphql
+schema: http://localhost:3001/graphql
+documents: './lib/graphql/**/*.graphql'
+generates:
+  ./lib/graphql/generated/graphql.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-query
+    config:
+      fetcher: graphql-request
