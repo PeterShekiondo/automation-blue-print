@@ -7,21 +7,22 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "codegen": "graphql-codegen --config codegen.ts"
+    "generate": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.2",
     "axios": "^0.27.2",
-    "graphql": "^16.6.0",
+    "graphql": "^16.3.0",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-query": "^3.39.2"
+    "react-query": "^3.34.15"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "2.13.6",
-    "@graphql-codegen/client-preset": "1.0.6",
-    "@graphql-codegen/introspection": "2.2.1",
-    "@graphql-codegen/typescript-react-query": "^4.0.2",
+    "@graphql-codegen/cli": "^2.3.0",
+    "@graphql-codegen/typescript": "^2.4.1",
+    "@graphql-codegen/typescript-operations": "^2.2.1",
+    "@graphql-codegen/typescript-react-query": "^3.2.2",
     "@types/node": "18.7.23",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",

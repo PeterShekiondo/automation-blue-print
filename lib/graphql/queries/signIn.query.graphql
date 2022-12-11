@@ -1,5 +1,0 @@
-query SignIn($authCredentailsDto: AuthCredentialsDto!) {
-  signIn(authCredentailsDto: $authCredentailsDto) {
-    accessToken
-  }
-}

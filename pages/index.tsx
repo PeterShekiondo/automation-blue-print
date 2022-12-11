@@ -1,9 +1,38 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from "next";
+import Head from "next/head";
+import Image from "next/image";
+import { useEffect } from "react";
+import { gql, useMutation } from "@apollo/client";
+
+import styles from "../styles/Home.module.css";
+var peron: String = "peterson";
+const createOneUser = gql`
+  mutation {
+    createUser(
+      createUserInput: {
+        first_name: "peterson"
+        last_name: "cefason"
+        username: "cefasway"
+        password: "1234567890"
+        email: "mail@mail.com"
+        department: "chemistry"
+        position: "research"
+      }
+    ) {
+      first_name
+      last_name
+    }
+  }
+`;
 
 const Home: NextPage = () => {
+  const [mutateFunction, { data, loading, error }] = useMutation(createOneUser);
+
+  useEffect(() => {
+    console.log(data);
+    console.log(JSON.stringify(error, null, 2));
+  }, [data]);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,12 +42,13 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-         <a href="https://nextjs.org">Next.js!</a>
+        <h1 className={styles.title} onClick={() => mutateFunction()}>
+          <a>Next.js!</a>
         </h1>
       </main>
+      <button onClick={() => mutateFunction()}>create user</button>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
