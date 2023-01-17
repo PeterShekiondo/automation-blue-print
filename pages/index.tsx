@@ -19,8 +19,7 @@ const createOneUser = gql`
         position: "research"
       }
     ) {
-      first_name
-      last_name
+      email
     }
   }
 `;
@@ -45,8 +44,24 @@ const Home: NextPage = () => {
         <h1 className={styles.title} onClick={() => mutateFunction()}>
           <a>Next.js!</a>
         </h1>
+        <button
+          style={{
+            marginTop: 20,
+            paddingRight: 10,
+            paddingLeft: 10,
+            paddingTop: 5,
+            paddingBottom: 5,
+            borderRadius: 100,
+            backgroundColor: "#0070f3",
+            borderColor: "#0070f3",
+            fontStyle: "bold",
+            fontSize: 16,
+          }}
+          onClick={() => mutateFunction()}
+        >
+          create user
+        </button>
       </main>
-      <button onClick={() => mutateFunction()}>create user</button>
     </div>
   );
 };
